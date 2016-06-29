@@ -1,6 +1,38 @@
 * {
-  font-family: effra;
+  font-family: 'Segoe UI', 'San Francisco', 'Roboto', 'Fira Sans', sans-serif;
+  font-weight: normal;
   text-rendering: optimizeLegibility; }
 
+body {
+  background-color: #f7f9fa;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+section.posts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column; }
+
+article {
+  border: 10px solid #601DFF;
+  margin: 10px 0px 10px 0px;
+  padding: 10px; }
+
+article.photo {
+  border-color: #3DC259; }
+
+article.text article.quote article.link {
+  border-color: #E55377;
+  flex-shrink: 2; }
+
+article.video article.audio {
+  border-color: #E6DD32; }
+
+article.reblog {
+  border-color: #FD921D; }
+
 h1 {
-  font-weight: bold; }
+  font-weight: lighter; }
