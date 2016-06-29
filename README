@@ -1,0 +1,3 @@
+node-sass.cmd -w .\src\style\ -o .\src\style\
+
+pug .\src\main.pug -w -P -o .\dist\

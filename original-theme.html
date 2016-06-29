@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+    <title>
+        {Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}
+    </title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Publisher 2.0
+         by Projector Themes
+         projectorthemes.tumblr.com -->
+
+    {block:Hidden}
+    <!-- THEME OPTIONS -->
+    <meta name="select:Pagination Mode" content="previousNext" title="Previous/Next">
+    <meta name="select:Pagination Mode" content="infiniteScroll" title="Infinite Scroll">
+    <meta name="select:Pagination Mode" content="loadMoreButton" title="Load More Button">
+    <meta name="select:Header Weight" content="700" title="Bold">
+    <meta name="select:Header Weight" content="500" title="Medium">
+    <meta name="select:Header Weight" content="400" title="Normal">
+    <meta name="select:Header Weight" content="300" title="Light">
+    <meta name="image:Logo" content="">
+    <meta name="color:Text" content="#000">
+    <meta name="color:Header Text" content="#000">
+    <meta name="color:Navbar Icons" content="#000">
+    <meta name="color:Navbar Title" content="#000">
+    <meta name="color:Navbar Background" content="#fff">
+    <meta name="color:Menu Background" content="#fff">
+    <meta name="color:Search Text" content="#000">
+    <meta name="color:Search Background" content="#fff">
+    <meta name="color:Load More Button Background" content="#000">
+    <meta name="color:Load More Button Text" content="#fff">
+    <meta name="if:Show Header Image" content="1">
+    <meta name="if:Show Social Nav" content="1">
+    <meta name="if:Show Title In Navbar" content="1">
+    <meta name="if:Show Search" content="1">
+    <meta name="if:Show Menu" content="1">
+    <meta name="if:Show Exif Data" content="0">
+    <meta name="if:Show Tags" content="1">
+    <meta name="if:Show Reblog Button" content="1">
+    <meta name="if:Show Like Button" content="1">
+    <meta name="if:Show Share Button" content="1">
+    <meta name="if:Show Date" content="1">
+    <meta name="if:Show Notes" content="1">
+    <meta name="if:Full Width Photos" content="1">
+    <meta name="if:Fixed Header Background" content="0">
+    <meta name="if:Photoset Lightbox" content="0">
+    <meta name="if:Letterbox Photos" content="0">
+    <meta name="if:Show RSS" content="0">
+    <meta name="text:Email" content="">
+    <meta name="text:Facebook" content="">
+    <meta name="text:Google Plus" content="">
+    <meta name="text:Twitter" content="">
+    <meta name="text:LinkedIn" content="">
+    <meta name="text:Github" content="">
+    <meta name="text:Bitbucket" content="">
+    <meta name="text:CodePen" content="">
+    <meta name="text:StackOverflow" content="">
+    <meta name="text:Behance" content="">
+    <meta name="text:Dribbble" content="">
+    <meta name="text:deviantART" content="">
+    <meta name="text:Pinterest" content="">
+    <meta name="text:Flickr" content="">
+    <meta name="text:Instagram" content="">
+    <meta name="text:YouTube" content="">
+    <meta name="text:Vimeo" content="">
+    <meta name="text:Vine" content="">
+    <meta name="text:Spotify" content="">
+    <meta name="text:Soundcloud" content="">
+    <meta name="text:Foursquare" content="">
+    <meta name="text:Yelp" content="">
+    <meta name="text:StackExchange" content="">
+    <meta name="text:Base Font Size" content="100%">
+    <meta name="text:Base Line Height" content="1.5">
+    <meta name="text:Photo Max Width" content="850px">
+    <meta name="text:Video Max Width" content="850px">
+    <meta name="text:Photoset Gutter" content="3px">
+    <meta name="text:Google Web Font" content="">
+    <meta name="text:Google Analytics ID" content="">
+    <meta name="text:Disqus Shortname" content="">
+    {/block:Hidden}
+
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+    {block:ifGoogleWebFont}
+    <link href='//fonts.googleapis.com/css?family={text:Google Web Font}:400,{select:Header Weight}' rel='stylesheet' type='text/css'>
+    {/block:ifGoogleWebFont}
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://static.tumblr.com/fk7a7ro/M3ynf026l/main2.0.min.css" rel="stylesheet">
+
+    <style>
+
+    /* CUSTOM STYLES */
+
+    html {
+        background-color: {BackgroundColor};
+        color: {color:Text};
+        font: 100%/{text:Base Line Height} {block:ifGoogleWebFont}{text:Google Web Font},{/block:ifGoogleWebFont} Avenir, Arial;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @media screen and (min-width: 600px) {
+        html {
+            font-size: {text:Base Font Size};
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: {select:Header Weight};
+    }
+
+    a {
+        color: {AccentColor};
+    }
+
+    .siteHeader {
+        {block:ifShowHeaderImage}
+        background: url({HeaderImage}) no-repeat center center {block:ifFixedHeaderBackground}fixed{/block:ifFixedHeaderBackground};
+        background-size: cover;
+        {/block:ifShowHeaderImage}
+        color: {color:Header Text};
+    }
+
+    .siteHeader-social > li > a {
+        color: {color:Header Text};
+    }
+
+    .navbar.is-visible {
+        background: {color:Navbar Background};
+    }
+
+    .navbar-title a {
+        color: {color:Navbar Title};
+    }
+
+    .navbar button {
+        color: {color:Navbar Icons};
+    }
+
+    .siteNav {
+        background-color: {color:Menu Background};
+    }
+
+    .search {
+        background: {color:Search Background};
+        color: {color:Search Text};
+    }
+
+    .post-footer a:hover {
+        color: {color:Text};
+    }
+
+    .post-like .heart-filled {
+        color: {AccentColor};
+    }
+
+    .post-shareButtons {
+        background-color: {BackgroundColor};
+    }
+
+    .post-shareButtons a:hover {
+        background-color: {AccentColor};
+        color: #fff;
+    }
+
+    .post-showComments {
+        color: {AccentColor};
+    }
+
+    .photo,
+    .video {
+        max-width: {text:Photo Max Width};
+    }
+
+    {block:ifLetterboxPhotos}
+    .photo-wrapper {
+        background-color: #000;
+    }
+    {/block:ifLetterboxPhotos}
+
+    {block:ifFullWidthPhotos}
+    .photo-wrapper > img {
+        width: 100%;
+    }
+    {/block:ifFullWidthPhotos}
+
+    .siteFooter-loadMore {
+        background: {color:Load More Button Background};
+        color: {color:Load More Button Text};
+    }
+
+    .modal {
+        background-color: {BackgroundColor};
+    }
+
+    {CustomCSS}
+
+    </style>
+</head>
+<body>
+    <header class="siteHeader">
+        <div class="siteHeader-inner">
+            {block:ifLogoImage}
+            <a href="/">
+                <img src="{image:Logo}" class="siteHeader-logo">
+            </a>
+            {/block:ifLogoImage}
+            {block:ShowTitle}
+            <h1 class="siteHeader-title">
+                <a href="/">{Title}</a>
+            </h1>
+            {/block:ShowTitle}
+            {block:ShowDescription}
+            <p class="siteHeader-description">{Description}</p>
+            {/block:ShowDescription}
+            {block:ifShowSocialNav}
+            <ul class="siteHeader-social">
+                {block:ifShowRSS}
+                <li>
+                    <a href="{RSS}">
+                        <i class="fa fa-rss"></i>
+                    </a>
+                </li>
+                {/block:ifShowRSS}
+                {block:ifEmail}
+                <li>
+                    <a href="mailto:{text:Email}">
+                        <i class="fa fa-envelope-o"></i>
+                    </a>
+                </li>
+                {/block:ifEmail}
+                {block:ifFacebook}
+                <li>
+                    <a href="{text:Facebook}">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                {/block:ifFacebook}
+                {block:ifGooglePlus}
+                <li><a href="{text:Google Plus}">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+                {/block:ifGooglePlus}
+                {block:ifTwitter}
+                <li>
+                    <a href="{text:Twitter}">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+               {/block:ifTwitter}
+               {block:ifLinkedIn}
+                    <li>
+                        <a href="{text:LinkedIn}">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                {/block:ifLinkedIn}
+                {block:ifGithub}
+                <li>
+                    <a href="{text:Github}">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </li>
+               {/block:ifGithub}
+               {block:ifBitbucket}
+                <li>
+                    <a href="{text:Bitbucket}">
+                        <i class="fa fa-bitbucket"></i>
+                    </a>
+                </li>
+               {/block:ifBitbucket}
+               {block:ifCodePen}
+                <li>
+                    <a href="{text:CodePen}">
+                        <i class="fa fa-codepen"></i>
+                    </a>
+                </li>
+               {/block:ifCodePen}
+               {block:ifStackOverflow}
+                <li>
+                    <a href="{text:StackOverflow}">
+                        <i class="fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+               {/block:ifStackOverflow}
+               {block:ifBehance}
+                <li>
+                    <a href="{text:behance}">
+                        <i class="fa fa-behance"></i>
+                    </a>
+                </li>
+               {/block:ifBehance}
+               {block:ifDribbble}
+                <li>
+                    <a href="{text:Dribbble}">
+                        <i class="fa fa-dribbble"></i>
+                    </a>
+                </li>
+               {/block:ifDribbble}
+               {block:ifdeviantART}
+                <li>
+                    <a href="{text:deviantART}">
+                        <i class="fa fa-deviantart"></i>
+                    </a>
+                </li>
+               {/block:ifdeviantART}
+               {block:ifPinterest}
+                <li>
+                    <a href="{text:Pinterest}">
+                        <i class="fa fa-pinterest"></i>
+                    </a>
+                </li>
+                {/block:ifPinterest}
+                {block:ifFlickr}
+                <li>
+                    <a href="{text:Flickr}">
+                        <i class="fa fa-flickr"></i>
+                    </a>
+                </li>
+                {/block:ifFlickr}
+                {block:ifInstagram}
+                <li>
+                    <a href="{text:Instagram}">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </li>
+                {/block:ifInstagram}
+                {block:ifYouTube}
+                <li>
+                    <a href="{text:YouTube}">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                </li>
+                {/block:ifYouTube}
+                {block:ifVimeo}
+                <li>
+                    <a href="{text:Vimeo}">
+                        <i class="fa fa-vimeo-square"></i>
+                    </a>
+                </li>
+                {/block:ifVimeo}
+                {block:ifVine}
+                <li>
+                    <a href="{text:Vine}">
+                        <i class="fa fa-vine"></i>
+                    </a>
+                </li>
+                {/block:ifVine}
+                {block:ifSpotify}
+                <li>
+                    <a href="{text:Spotify}">
+                        <i class="fa fa-spotify"></i>
+                    </a>
+                </li>
+                {/block:ifSpotify}
+                {block:ifSoundcloud}
+                <li>
+                    <a href="{text:Soundcloud}">
+                        <i class="fa fa-soundcloud"></i>
+                    </a>
+                </li>
+                {/block:ifSoundcloud}
+                {block:ifFoursquare}
+                <li>
+                    <a href="{text:Foursquare}">
+                        <i class="fa fa-foursquare"></i>
+                    </a>
+                </li>
+                {/block:ifFoursquare}
+                {block:ifYelp}
+                <li>
+                    <a href="{text:Yelp}">
+                        <i class="fa fa-yelp"></i>
+                    </a>
+                </li>
+                {/block:ifYelp}
+                {block:ifStackExchange}
+                <li>
+                    <a href="{text:StackExchange}">
+                        <i class="fa fa-stack-exchange"></i>
+                    </a>
+                </li>
+                {/block:ifStackExchange}
+            </ul>
+            {/block:ifShowSocialNav}
+            {block:SearchPage}
+            <div class="results">
+                {lang:SearchResultCount results for SearchQuery}
+                {block:NoSearchResults}
+                    {lang:Sorry no results for SearchQuery}
+                {/block:NoSearchResults}
+            </div>
+            {/block:SearchPage}
+            {block:TagPage}
+            <div class="results">
+                {lang:Showing posts tagged Tag}
+            </div>
+            {/block:TagPage}
+            {block:DayPage}
+            <div class="results">
+                {lang:Posted on DayOfMonth Month Year}
+            </div>
+            {/block:DayPage}
+        </div><!-- /.siteHeader-inner -->
+    </header>
+    <div class="navbar">
+        <div class="navbar-inner">
+            {block:ifShowTitleInNavbar}
+            <h1 class="navbar-title">
+                <a href="/">{Title}</a>
+            </h1>
+            {/block:ifShowTitleInNavbar}
+            {block:ifShowMenu}
+            <button class="navbar-menuToggle" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            {/block:ifShowMenu}
+            {block:ifShowSearch}
+            <button class="navbar-searchToggle" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+            {/block:ifShowSearch}
+        </div>
+    </div><!-- /.navbar -->
+    {block:ifShowMenu}
+    <nav class="siteNav">
+        <ul class="siteNav-pages">
+            {block:HasPages}
+            {block:Pages}
+            <li><a href="{URL}">{Label}</a></li>
+            {/block:Pages}
+            {/block:HasPages}
+            {block:AskEnabled}
+            <li><a href="/ask">{AskLabel}</a></li>
+            {/block:AskEnabled}
+            {block:SubmissionsEnabled}
+            <li><a href="/submit">{SubmitLabel}</a></li>
+            {/block:SubmissionsEnabled}
+            <li><a href="/archive">{lang:Archive}</a></li>
+        </ul>
+    </nav>
+    {/block:ifShowMenu}
+    {block:ifShowSearch}
+    <form id="search" action="/search" method="get">
+        <input class="search" type="text" name="q" value="{SearchQuery}" placeholder="{lang:Search}" autocomplete="off">
+    </form>
+    {/block:ifShowSearch}
+    <section class="posts">
+        {block:Posts}
+        <article class="post {PostType}" id="{PostID}">
+            {block:Audio}
+            <div class="audio-wrapper">
+                {block:AudioEmbed}
+                {AudioEmbed}
+                {/block:AudioEmbed}
+                {block:AudioPlayer}
+                {block:AlbumArt}
+                <img src="{AlbumArtURL}" class="audio-albumArt">
+                {/block:AlbumArt}
+                {AudioPlayer}
+                {/block:AudioPlayer}
+            </div>
+            {block:Caption}
+            {Caption}
+            {/block:Caption}
+            {/block:Audio}
+            {block:Chat}
+            {block:Title}
+            <h3 class="post-title">
+                <a href="{Permalink}#{PostID}">{Title}</a>
+            </h3>
+            {/block:Title}
+            <ul class="chat-list">
+                {block:Lines}
+                <li class="{Alt}">
+                    {block:Label}
+                    {Label}
+                    {/block:Label}
+                    {Line}
+                </li>
+                {/block:Lines}
+            </ul>
+            {/block:Chat}
+
+            {block:Video}
+            <div class="video-wrapper {TagsAsClasses}">
+                {Video-700}
+            </div>
+            {block:Caption}
+            {Caption}
+            {/block:Caption}
+            {/block:Video}
+            {block:Link}
+            <div class="link-wrapper">
+                <a href="{URL}" {Target}>
+                {Name}
+            </a>
+            </div>
+            {block:Description}
+                {Description}
+            {/block:Description}
+            {/block:Link}
+            {block:Quote}
+            <div class="quote-wrapper">
+                <blockquote>
+                    <p>{Quote}</p>
+                    {block:Source}
+                    <footer><p>&ndash; {Source}</p></footer>
+                    {/block:Source}
+                </blockquote>
+            </div>
+            {/block:Quote}
+            {block:Photoset}
+            <div class="photoset-wrapper" data-layout="{PhotosetLayout}" data-id="photoset{PostID}">
+                {block:Photos}
+                <img {block:ifPhotosetLightbox}class="lightbox"{/block:ifPhotosetLightbox} src="{PhotoURL-1280}" data-highres="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-1280}" height="{PhotoHeight-1280}">
+                {/block:Photos}
+            </div>
+            {block:Caption}
+            {Caption}
+            {/block:Caption}
+            {/block:Photoset}
+            {block:Photo}
+            <div class="photo-wrapper">
+                {block:LinkURL}
+                <a href="{LinkURL}">
+                {/block:LinkURL}
+                <img src="{PhotoURL-1280}" alt="{PhotoAlt}">
+                {block:LinkURL}
+                </a>
+               {/block:LinkURL}
+                {block:ifShowExifData}
+                {block:Exif}
+                <div class="photo-exif">
+                    <ul>
+                        {block:Camera}
+                        <li>
+                            Camera: {Camera}
+                        </li>
+                        {/block:Camera}
+                        {block:Aperture}
+                        <li>
+                            Aperture: {Aperture}
+                        </li>
+                        {/block:Aperture}
+                        {block:Exposure}
+                        <li>
+                            Exposure: {Exposure}
+                        </li>
+                        {/block:Exposure}
+                        {block:FocalLength}
+                            <li>Focal Length: {FocalLength}
+                        </li>
+                        {/block:FocalLength}
+                    </ul>
+                </div>
+                <button class="photo-exifToggle" type="button">
+                    <i class="fa fa-info"></i>
+                </button>
+                {/block:Exif}
+                {/block:ifShowExifData}
+            </div>
+            {block:Caption}
+                <p class="post-caption">{Caption}</p>
+            {/block:Caption}
+            {/block:Photo}
+
+            {block:Text}
+            {block:Title}
+            <h3 class="post-title">
+                <a href="{Permalink}#{PostID}">{Title}</a>
+            </h3>
+            {/block:Title}
+            {Body}
+            {block:More}
+            <p>
+                <a href="{Permalink}#{PostID}">{lang:Read more}</a>
+            </p>
+            {/block:More}
+            {/block:Text}
+            {block:Answer}
+            <p>{Asker}: <q>{Question}</q></p>
+            {Answer}
+            {/block:Answer}
+            {block:Date}
+            <footer class="post-footer">
+                {block:ifShowTags}
+                {block:HasTags}
+                <ul class="post-tags">
+                    {block:Tags}
+                    <li>
+                        <a href="{TagURL}" class="tag">#{Tag}</a>
+                    </li>
+                    {/block:Tags}
+                </ul>
+                {/block:HasTags}
+                {/block:ifShowTags}
+                <div class="post-options">
+                    {block:ifShowReblogButton}
+                    <div class="post-reblogContainer">
+                        {ReblogButton}
+                        <span class="post-reblog">
+                            <i class="fa fa-retweet"></i>
+                        </span>
+                    </div>
+                    {/block:ifShowReblogButton}
+                    {block:ifShowLikeButton}
+                    <div class="post-likeContainer">
+                        {LikeButton}
+                        <span class="post-like">
+                            <i class="fa fa-heart heart-empty"></i>
+                            <i class="fa fa-heart heart-filled u-scaleOut"></i>
+                        </span>
+                    </div>
+                    {/block:ifShowLikeButton}
+                    {block:ifShowShareButton}
+                    <div class="post-shareContainer">
+                        <span class="post-share">
+                            <i class="fa fa-share"></i>
+                            <i class="fa fa-close u-scaleOut"></i>
+                            <ul class="post-shareButtons">
+                                <li>
+                                    <a href="{Permalink}#{PostID}">
+                                        <i class="fa fa-link"></i> Permalink
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:?Body={Permalink}">
+                                        <i class="fa fa-envelope-o"></i> Email
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.facebook.com/sharer.php?u={Permalink}" target="_blank">
+                                        <i class="fa fa-facebook"></i> facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/share?url={Permalink}" target="_blank">
+                                    <i class="fa fa-google-plus"></i> Google+
+                                </a>
+                                </li>
+                                <li>
+                                    <a href="http://twitter.com/share?url={Permalink}" target="_blank">
+                                        <i class="fa fa-twitter"></i> Twitter
+                                    </a>
+                                </li>
+                            </ul><!-- /.post-shareButtons -->
+                        </span><!-- /.post-share-->
+                    </div><!-- /.post-shareContainer -->
+                    {/block:ifShowShareButton}
+                    {block:ifShowDate}
+                    <a href="{Permalink}#{PostID}" class="post-date" data-timeago="{TimeAgo}" data-datetime="{DayOfMonth} {Month}, {Year}">
+                    {TimeAgo}
+                    </a>
+                    {/block:ifShowDate}
+                    {block:ifShowNotes}
+                    {block:NoteCount}
+                    <a href="{Permalink}#notes">
+                        {NoteCountWithLabel}
+                    </a>
+                    {/block:NoteCount}
+                    {/block:ifShowNotes}
+                    {block:ifDisqusShortname}
+                    <a href="{Permalink}#disqus_thread" class="post-commentCount">
+                        {lang:View comments}
+                    </a>
+                    {/block:ifDisqusShortname}
+                </ul>
+                </div><!-- /.post-options -->
+            </footer>
+            {block:ifDisqusShortname}
+            {block:PermalinkPage}
+            <button class="post-showComments" type="button">
+                {lang:View comments}
+            </button>
+            {/block:PermalinkPage}
+            {/block:ifDisqusShortname}
+            {block:ifShowNotes}
+            {block:PermalinkPage}
+            {block:PostNotes}
+            {PostNotes-16}
+            {/block:PostNotes}
+            {/block:PermalinkPage}
+            {/block:ifShowNotes}
+            {/block:Date}
+        </article>
+        {/block:Posts}
+    </section>
+    <footer class="siteFooter {select:Pagination Mode}">
+        {block:Pagination}
+        {block:PreviousPage}
+        <a href="{PreviousPage}" class="siteFooter-previous">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        {/block:PreviousPage}
+        {block:NextPage}
+        <a href="{NextPage}" class="siteFooter-next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        {/block:NextPage}
+        <button class="siteFooter-loadMore" type="button">
+            {lang:Load more posts}
+        </button>
+        {/block:Pagination}
+        {block:DayPagination}
+        {block:PreviousDayPage}
+        <a href="{PreviousDayPage}">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        {/block:PreviousDayPage}
+        {block:NextDayPage}
+        <a href="{NextDayPage}">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        {/block:NextDayPage}
+        {/block:DayPagination}
+        {block:PermalinkPagination}
+        {block:PreviousPost}
+            <a href="{PreviousPost}">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        {/block:PreviousPost}
+        {block:NextPost}
+            <a href="{NextPost}">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        {/block:NextPost}
+        {/block:PermalinkPagination}
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write("http://static.tumblr.com/fk7a7ro/6pcn48tuo/jquery-2.1.0.min.js")</script>
+    <script src="http://static.tumblr.com/7esz91z/rUin4yx1g/photosetgrid1.0.1.js"></script>
+    {block:IfGoogleAnalyticsID}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{text:Google Analytics ID}', 'auto');
+        ga('send', 'pageview');
+    </script>
+    {/block:IfGoogleAnalyticsID}
+    <script src="http://static.tumblr.com/fk7a7ro/9r5neyszl/app.min.js"></script>
+    <script>
+        {block:ifDisqusShortname}
+        // DISQUS
+        var disqus_shortname = '{text:Disqus Shortname}';
+        $.getScript('https://' + disqus_shortname + '.disqus.com/count.js');
+        {block:ifDisqusShortname}
+
+        $(function() {
+
+            // PHOTOSET
+            $('.photoset-wrapper').photosetGrid({gutter: '{text:Photoset Gutter}'});
+
+            {block:ifShowSearch}
+            // SEARCH
+            searchToggle.on('click', revealSearch);
+            {/block:ifShowSearch}
+
+            // NAVBAR
+            $(window).on('scroll', revealNavbar);
+
+            {block:ifShowMenu}
+            // NAV
+            menuToggle.on('click', revealMenu);
+            {/block:ifShowMenu}
+
+            {block:ifShowExifData}
+            // EXIF
+            $(document).on('click', '.post-exifToggle', revealExif);
+            {/block:ifShowExifData}
+
+            {block:ifPhotosetLightbox}
+            // MODAL
+            $('body').on('click', '.lightbox', createModal);
+            $('body').on('click', '.modal', removeModal);
+            {/block:ifPhotosetLightbox}
+
+            // SHARE
+           $('body').on('click', '.post-share', toggleShare);
+
+            // LIKE
+            $('body').on('click', '.like_button', toggleLike);
+
+            // COMMENTS
+            {block:ifDisqusShortname}
+            $('.post-showComments').on('click', loadComments);
+            {/block:ifDisqusShortname}
+
+            {block:PermalinkPage}
+            autoLoadComments();
+            {block:PermalinkPage}
+
+            {block:Pagination}
+            // PAGINATION
+            paginate({CurrentPage}, '{select:Pagination Mode}', '{lang:Load more posts}', '{lang:No more posts}', {block:ifDisqusShortname}true{/block:ifDisqusShortname} {block:ifNotDisqusShortname}false{/block:ifNotDisqusShortname}, '{text:Photoset Gutter}');
+            {/block:Pagination}
+
+        });
+    </script>
+</body>
+</html>
