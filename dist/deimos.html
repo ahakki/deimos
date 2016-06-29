@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <title>{Title}</title>
-  <link rel="shortcut icon" href="{Favicon}">
-  <script src="https://use.typekit.net/dvq3ffd.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
-  <style>
-    * {
+  <head>
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <script src="https://use.typekit.net/dvq3ffd.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <style>
+      * {
   font-family: effra;
   text-rendering: optimizeLegibility; }
 
 h1 {
   font-weight: bold; }
-    {CustomCSS}
-  </style>
+      {CustomCSS}
+    </style>
+  </head>
   <body>
     <header><img src="{HeaderImage}">
       <h1>{Title}</h1>
-      <h4>{Description} </h4>
+      <h4>{Description}</h4>
     </header>{block:Posts}{block:Photo}
-    <article class="photo"><img src="{PhotoURL-HighRes}" alt="Arthakki: {PhotoAlt}">
-      <h2>{Caption}</h2>
+    <article class="photo">
+      <figure><img src="{PhotoURL-HighRes}" alt="Arthakki: {PhotoAlt}">
+        <figcaption>
+          <h2>{Caption}</h2>
+        </figcaption>
+      </figure>
     </article>{/block:Photo}{/block:Posts}
+    <footer>
+      <p>hakki</p>
+    </footer>
   </body>
 </html>

@@ -1,5 +1,7 @@
 | {block:Photo}
 article.photo
-    img(src="{PhotoURL-HighRes}" alt="Arthakki: {PhotoAlt}")
-    h2 {Caption}
+    figure
+        img(src="{PhotoURL-HighRes}" alt="Arthakki: {PhotoAlt}")
+        figcaption
+            h2 {Caption}
 | {/block:Photo}
