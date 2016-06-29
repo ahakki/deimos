@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <title>{Title}</title>
+  <link rel="shortcut icon" href="{Favicon}">
+  <style>
+    * {
+  font-family: monospace;
+  text-rendering: optimizeLegibility; }
+
+body {
+  background-color: lightgray; }
+    {CustomCSS}
+  </style>
+  <body>
+    <header><img src="{HeaderImage}">
+      <h1>{Title}</h1>
+      <h4>{Description}</h4>
+    </header>{block:Posts}{block:Photo}
+    <article class="photo"><img src="{PhotoURL-HighRes}">
+      <h2>{Caption}</h2>
+    </article>{/block:Photo}{/block:Posts}
+  </body>
+</html>

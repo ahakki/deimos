@@ -1,2 +1,6 @@
+* {
+  font-family: monospace;
+  text-rendering: optimizeLegibility; }
+
 body {
-  color: black; }
+  background-color: lightgray; }
