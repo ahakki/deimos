@@ -1,23 +1,23 @@
-# watch a file changes in the current directory,
-# execute all tests when a file is changed or renamed
+Function Register-Watcher {
+    param ($folder)
+    $filter = "*.*" #all files
+    $watcher = New-Object IO.FileSystemWatcher $folder, $filter -Property @{
+        IncludeSubdirectories = $false
+        EnableRaisingEvents = $true
+    }
 
-$watcher = New-Object System.IO.FileSystemWatcher
-$watcher.Path = '.\src\'
-$watcher.IncludeSubdirectories = $false
-$watcher.EnableRaisingEvents = $false
-$watcher.NotifyFilter = [System.IO.NotifyFilters]::LastWrite -bor [System.IO.NotifyFilters]::FileName
+    $changeAction = [scriptblock]::Create('
+	 	$path = $Event.SourceEventArgs.FullPath
+        $name = $Event.SourceEventArgs.Name
+        $changeType = $Event.SourceEventArgs.ChangeType
+        $timeStamp = $Event.TimeGenerated
+		node-sass .\src\style.sass -o .\src\includes\style\
+		pug .\src\deimos.pug -P -o .\dist
+        Write-Host "Change Detected: Building!"
+    ')
 
-node-sass .\src\style.sass -o .\src\includes\style\;
-pug .\src\deimos.pug -P -o .\dist;
-write-host "initial build completed.";
-write-host "watching";
-
-while($TRUE){
-	$result = $watcher.WaitForChanged([System.IO.WatcherChangeTypes]::Changed -bor [System.IO.WatcherChangeTypes]::Renamed -bOr [System.IO.WatcherChangeTypes]::Created, 1000);
-	if($result.TimedOut){
-		continue;
-	}
-    node-sass .\src\style.sass -o .\src\includes\style\;
-    pug .\src\deimos.pug -P -o .\dist;
-
+    Register-ObjectEvent $Watcher "Changed" -Action $changeAction
 }
+
+ Register-Watcher "C:\Users\ahakki\Documents\deimos\src"
+
