@@ -5,82 +5,87 @@
     <link rel="shortcut icon" href="{Favicon}">
     <script src="https://use.typekit.net/dvq3ffd.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <style>* {
+    <style type="text/css">
+      * {
   font-family: 'Segoe UI', 'San Francisco', 'Roboto', 'Fira Sans', sans-serif;
   font-weight: normal;
-  text-rendering: optimizeLegibility; }
-
+  text-rendering: optimizeLegibility;
+}
 body {
   background-color: #f7f9fa;
   margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; }
-
+  flex-direction: column;
+}
 article {
   border-style: solid;
   border-width: 10px;
-  border-color: #FD921D;
+  border-color: #fd921d;
   margin: 10px 0px 10px 0px;
   max-width: 60vw;
   flex-grow: 1;
   justify-content: center;
   align-items: baseline;
-  background-color: #eee; }
-
+  background-color: #eee;
+}
 article.photo {
   border-style: solid;
   border-width: 10px;
-  border-color: #3DC259; }
-
-article.photo figure a img {
+  border-color: #3dc259;
+}
+article.photo figure a img,
+article.video video {
   max-width: 100%;
   max-height: 90vmin;
   justify-content: center;
-  align-items: center; }
-
-article.text, article.quote, article.link, article.answer {
-  border-color: #E55377; }
-
-article.video, article.audio {
-  border-color: #E6DD32; }
-
+  align-items: center;
+}
+article.text,
+article.quote,
+article.link,
+article.answer {
+  border-color: #e55377;
+}
+article.video,
+article.audio {
+  border-color: #e6dd32;
+}
 article details {
   display: flex;
   align-items: flex-start;
-  justify-content: space-around; }
-
+  justify-content: space-around;
+}
 article details p {
   display: inline-block;
-  margin-right: 10px; }
-
+  margin-right: 10px;
+}
 section.content {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  align-self: center; }
-
+  align-self: center;
+}
 section.caption {
   margin: 0;
-  padding: 10px; }
-
+  padding: 10px;
+}
 section.caption p {
-  margin: 0; }
-
+  margin: 0;
+}
 details {
-  background-color: #601DFF;
+  background-color: #601dff;
   color: #fff;
   margin: 0;
-  padding: 10px; }
-
+  padding: 10px;
+}
 details a {
-  color: #FD921D; }
-
+  color: #fd921d;
+}
 h1 {
-  font-weight: lighter; }
-
-       
+  font-weight: lighter;
+}
       {CustomCSS}
     </style>
   </head>
@@ -116,12 +121,12 @@ h1 {
         <section class="caption"></section>{/block:Chat}{block:Audio}
         <section class="content"></section>
         <section class="caption"></section>{/block:Audio}{block:Video}
-        <section class="content">{Video-700}</section>{block:Caption}
+        <section class="content">{VideoEmbed-700}</section>{block:Caption}
         <section class="caption">
           <p>{Caption}</p>
         </section>
         {/block:Caption}
-        {/block:Video} {block:Answer}
+        {/block:Video}{block:Answer}
         <section class="content"></section>
         <section class="caption"></section>{/block:Answer}{block:Date}
         <details>

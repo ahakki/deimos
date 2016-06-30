@@ -4,7 +4,6 @@ link(rel="shortcut icon" href="{Favicon}")
 script(src="https://use.typekit.net/dvq3ffd.js")
 script try{Typekit.load({ async: true });}catch(e){}
 
-style
-    include ./style/style.css
-    | 
+style(type="text/css")
+    include:stylus ./style.styl
     | {CustomCSS}

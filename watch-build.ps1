@@ -1,8 +1,9 @@
+pug .\src\deimos.pug -P -o .\dist
 Function Register-Watcher {
     param ($folder)
     $filter = "*.*" #all files
     $watcher = New-Object IO.FileSystemWatcher $folder, $filter -Property @{
-        IncludeSubdirectories = $false
+        IncludeSubdirectories = $true
         EnableRaisingEvents = $true
     }
 
@@ -11,7 +12,6 @@ Function Register-Watcher {
         $name = $Event.SourceEventArgs.Name
         $changeType = $Event.SourceEventArgs.ChangeType
         $timeStamp = $Event.TimeGenerated
-		node-sass .\src\style.sass -o .\src\includes\style\
 		pug .\src\deimos.pug -P -o .\dist
         Write-Host "Change Detected: Building!"
     ')
@@ -19,5 +19,5 @@ Function Register-Watcher {
     Register-ObjectEvent $Watcher "Changed" -Action $changeAction
 }
 
- Register-Watcher "C:\Users\ahakki\Documents\deimos\src"
+ Register-Watcher ".\src\"
 
