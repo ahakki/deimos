@@ -38,6 +38,15 @@ article.text, article.quote, article.link, article.answer {
 article.video, article.audio {
   border-color: #E6DD32; }
 
+article details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around; }
+
+article details p {
+  display: inline-block;
+  margin-right: 10px; }
+
 h1 {
   font-weight: lighter; }
 
@@ -51,21 +60,39 @@ h1 {
       <p>{Description}</p>
     </header>
     <section class="posts">{block:Posts}
-      <article class="{PostType}, {TagsAsClasses}">{block:Photo}
+      <article class="{PostType}, {TagsAsClasses}">{block:Text}<a href="{permalink}">
+          <h3>{Title}</h3></a>
+        <p>{Body}</p>{/block:Text}{block:Photo}
         <figure><a href="{LinkURL}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>{block:Caption}
           <figcaption>
             <p>{Caption}</p>
           </figcaption>{/block:Caption}
-        </figure>{/block:Photo}{block:Video}
+        </figure>{/block:Photo}
+        {block:Panorama}
+        {/block:Panorama}
+        {block:Photoset}
+        {/block:Photoset}
+        {block:Quote}
+        {/block:Quote}
+        {block:Link}
+        {/block:Link}
+        {block:Chat}
+        {/block:Chat}
+        {block:Audio}
+        {/block:Audio}{block:Video}
         <figure>
           {Video-700}
           {block:Caption}
           <figcaption>
             <p>{Caption}</p>
           </figcaption>{/block:Caption}
-        </figure>{/block:Video}{block:Text}<a href="{permalink}">
-          <h3>{Title}</h3></a>
-        <p>{Body}</p>{/block:Text}
+        </figure>{/block:Video}
+        {block:Answer}
+        {/block:Answer}{block:Date}
+        <details>
+          <p class="time">{TimeAgo}</p>
+          <p class="permalink">Permalink: &nbsp<a href="{Permalink}">{ShortURL}</a></p>
+        </details>{/block:Date}
       </article>{/block:Posts}
     </section>
     <footer>

@@ -31,5 +31,14 @@ article.text, article.quote, article.link, article.answer {
 article.video, article.audio {
   border-color: #E6DD32; }
 
+article details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around; }
+
+article details p {
+  display: inline-block;
+  margin-right: 10px; }
+
 h1 {
   font-weight: lighter; }
