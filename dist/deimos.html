@@ -21,10 +21,13 @@ body {
 article {
   border-style: solid;
   border-width: 10px;
-  border-color: #601DFF;
+  border-color: #FD921D;
   margin: 10px 0px 10px 0px;
   max-width: 60vw;
-  flex-shrink: 2; }
+  flex-grow: 1;
+  justify-content: center;
+  align-items: baseline;
+  background-color: #eee; }
 
 article.photo {
   border-style: solid;
@@ -59,7 +62,6 @@ section.content {
   align-self: center; }
 
 section.caption {
-  background-color: #ddd;
   margin: 0;
   padding: 10px; }
 
@@ -67,9 +69,13 @@ section.caption p {
   margin: 0; }
 
 details {
-  background-color: #ccc;
+  background-color: #601DFF;
+  color: #fff;
   margin: 0;
   padding: 10px; }
+
+details a {
+  color: #FD921D; }
 
 h1 {
   font-weight: lighter; }
