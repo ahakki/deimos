@@ -1,8 +1,9 @@
 | {block:Photo}
-article.photo
-    figure
-        a(href="{permalink}")
-            img(src="{PhotoURL-HighRes}" alt="Arthakki: {PhotoAlt}")
-        figcaption
-            p {Caption}
+figure
+    a(href="{LinkURL}")
+        img(src="{PhotoURL-HighRes}" alt="{PhotoAlt}")
+    | {block:Caption}
+    figcaption
+        p {Caption}
+    | {/block:Caption}
 | {/block:Photo}

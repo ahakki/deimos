@@ -5,8 +5,7 @@
     <link rel="shortcut icon" href="{Favicon}">
     <script src="https://use.typekit.net/dvq3ffd.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    <style>
-      * {
+    <style>* {
   font-family: 'Segoe UI', 'San Francisco', 'Roboto', 'Fira Sans', sans-serif;
   font-weight: normal;
   text-rendering: optimizeLegibility; }
@@ -32,39 +31,43 @@ article {
 article.photo {
   border-color: #3DC259; }
 
-article.text article.quote article.link {
+article.text, article.quote, article.link, article.answer {
   border-color: #E55377;
   flex-shrink: 2; }
 
-article.video article.audio {
+article.video, article.audio {
   border-color: #E6DD32; }
-
-article.reblog {
-  border-color: #FD921D; }
 
 h1 {
   font-weight: lighter; }
+
+       
       {CustomCSS}
     </style>
   </head>
   <body>
-    <header><img src="{HeaderImage}">
+    <header><a href="{BlogURL}"><img src="{HeaderImage}"></a>
       <h1>{Title}</h1>
       <p>{Description}</p>
-    </header>{block:Posts}
-    <section class="posts">{block:Photo}
-      <article class="photo">
-        <figure><a href="{permalink}"><img src="{PhotoURL-HighRes}" alt="Arthakki: {PhotoAlt}"></a>
+    </header>
+    <section class="posts">{block:Posts}
+      <article class="{PostType}, {TagsAsClasses}">{block:Photo}
+        <figure><a href="{LinkURL}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>{block:Caption}
           <figcaption>
             <p>{Caption}</p>
-          </figcaption>
-        </figure>
-      </article>{/block:Photo}{block:Text}
-      <article class="text"><a href="{permalink}">
+          </figcaption>{/block:Caption}
+        </figure>{/block:Photo}{block:Video}
+        <figure>
+          {Video-700}
+          {block:Caption}
+          <figcaption>
+            <p>{Caption}</p>
+          </figcaption>{/block:Caption}
+        </figure>{/block:Video}{block:Text}<a href="{permalink}">
           <h3>{Title}</h3></a>
-        <p>{Body}</p>
-      </article>{/block:Text}
-    </section>{/block:Posts}
+        <p>{Body}</p>{/block:Text}
+      </article>{/block:Posts}
+    </section>
     <footer>
       <p>hakki</p>
     </footer>

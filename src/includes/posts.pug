@@ -1,5 +1,8 @@
-|{block:Posts}
 section.posts
-    include ./posts/photo.pug
-    include ./posts/text.pug
-|{/block:Posts}
+    |{block:Posts}
+    article(class="{PostType}, {TagsAsClasses}")
+        include ./posts/photo.pug
+        include ./posts/video.pug 
+        include ./posts/text.pug
+
+    |{/block:Posts}
