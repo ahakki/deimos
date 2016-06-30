@@ -15,25 +15,30 @@ body {
   margin: 10px;
   display: flex;
   justify-content: center;
-  flex-direction: column; }
-
-section.posts {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   flex-direction: column; }
 
 article {
-  border: 10px solid #601DFF;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #601DFF;
   margin: 10px 0px 10px 0px;
-  padding: 10px; }
+  max-width: 60vw;
+  flex-shrink: 2; }
 
 article.photo {
+  border-style: solid;
+  border-width: 10px;
   border-color: #3DC259; }
 
+article.photo figure a img {
+  max-width: 100%;
+  max-height: 90vmin;
+  justify-content: center;
+  align-items: center; }
+
 article.text, article.quote, article.link, article.answer {
-  border-color: #E55377;
-  flex-shrink: 2; }
+  border-color: #E55377; }
 
 article.video, article.audio {
   border-color: #E6DD32; }
@@ -46,6 +51,25 @@ article details {
 article details p {
   display: inline-block;
   margin-right: 10px; }
+
+section.content {
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  align-self: center; }
+
+section.caption {
+  background-color: #ddd;
+  margin: 0;
+  padding: 10px; }
+
+section.caption p {
+  margin: 0; }
+
+details {
+  background-color: #ccc;
+  margin: 0;
+  padding: 10px; }
 
 h1 {
   font-weight: lighter; }
@@ -60,35 +84,40 @@ h1 {
       <p>{Description}</p>
     </header>
     <section class="posts">{block:Posts}
-      <article class="{PostType}, {TagsAsClasses}">{block:Text}<a href="{permalink}">
-          <h3>{Title}</h3></a>
-        <p>{Body}</p>{/block:Text}{block:Photo}
-        <figure><a href="{LinkURL}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>{block:Caption}
-          <figcaption>
-            <p>{Caption}</p>
-          </figcaption>{/block:Caption}
-        </figure>{/block:Photo}
-        {block:Panorama}
-        {/block:Panorama}
-        {block:Photoset}
-        {/block:Photoset}
-        {block:Quote}
-        {/block:Quote}
-        {block:Link}
-        {/block:Link}
-        {block:Chat}
-        {/block:Chat}
-        {block:Audio}
-        {/block:Audio}{block:Video}
-        <figure>
-          {Video-700}
-          {block:Caption}
-          <figcaption>
-            <p>{Caption}</p>
-          </figcaption>{/block:Caption}
-        </figure>{/block:Video}
-        {block:Answer}
-        {/block:Answer}{block:Date}
+      <article class="{PostType} {TagsAsClasses}">
+        {block:Text}
+        {block:Title}
+        <section class="content"><a href="{permalink}">
+            <h3>{Title}</h3></a></section>{/block:Title}
+        <section class="caption">
+          <p>{Body}</p>
+        </section>{/block:Text}{block:Photo}
+        <section class="content">
+          <figure><a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a></figure>
+        </section>
+        <section class="caption">{block:Caption}
+          <p>{Caption}</p>{/block:Caption}
+        </section>{/block:Photo} {block:Panorama}
+        <section class="content"></section>
+        <section class="caption"></section>{/block:Panorama}{block:Photoset}
+        <section class="content"></section>
+        <section class="caption"></section>{/block:Photoset}{block:Quote}
+        <section class="content"></section>
+        <section class="caption"></section>{/block:Quote}{block:Link}
+        <section class="content"></section>
+        <section class="caption"></section>{/block:Link}{block:Chat}
+        <section class="content"></section>
+        <section class="caption"></section>{/block:Chat}{block:Audio}
+        <section class="content"></section>
+        <section class="caption"></section>{/block:Audio}{block:Video}
+        <section class="content">{Video-700}</section>{block:Caption}
+        <section class="caption">
+          <p>{Caption}</p>
+        </section>
+        {/block:Caption}
+        {/block:Video} {block:Answer}
+        <section class="content"></section>
+        <section class="caption"></section>{/block:Answer}{block:Date}
         <details>
           <p class="time">{TimeAgo}</p>
           <p class="permalink">Permalink: &nbsp<a href="{Permalink}">{ShortURL}</a></p>

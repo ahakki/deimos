@@ -1,9 +1,10 @@
 | {block:Photo}
-figure
-    a(href="{LinkURL}")
-        img(src="{PhotoURL-HighRes}" alt="{PhotoAlt}")
+section.content
+    figure
+        a(href="{Permalink}")
+            img(src="{PhotoURL-HighRes}" alt="{PhotoAlt}")
+section.caption
     | {block:Caption}
-    figcaption
-        p {Caption}
+    p {Caption}
     | {/block:Caption}
-| {/block:Photo}
+| {/block:Photo} 

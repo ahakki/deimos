@@ -1,5 +1,9 @@
 | {block:Text}
-a(href="{permalink}")
-    h3 {Title}
-p {Body}
+| {block:Title}
+section.content
+    a(href="{permalink}")
+        h3 {Title}
+| {/block:Title}
+section.caption
+    p {Body}
 | {/block:Text}
