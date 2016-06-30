@@ -1,20 +1,26 @@
 {
   "name": "deimos",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "a tumblr theme",
   "main": "dist/deimos.html",
-  "dependencies": {},
+  "dependencies": {
+    // "npm-watch": "^0.1.4"
+  },
   "devDependencies": {
-    "jstransformer-stylus": "^1.0.0",
+    "jstransformer-sass": "^0.1.0",
     "pug-cli": "^1.0.0-alpha6"
   },
+  // "watch": {
+  //   "test": "src/**"
+  // },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pug .\\src\\deimos.pug -P -o .\\dist",
+    "watch": "npm-watch"
   },
   "repository": {
     "type": "git",
     "url": "git@bitbucket.com:ahakki/deimos"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Alexander Hakki",
+  "license": "BSD-3-Clause"
 }

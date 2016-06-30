@@ -18,6 +18,6 @@ Function Register-Watcher {
 
     Register-ObjectEvent $Watcher "Changed" -Action $changeAction
 }
-
- Register-Watcher ".\src\"
+$path = Join-Path $PSScriptRoot .\src\
+ Register-Watcher $path
 
