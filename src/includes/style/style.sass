@@ -15,34 +15,27 @@ article
     border-style: solid
     border-width: 10px
     border-color: #FD921D
+    background-color: #f6f6ef
 
     margin: 10px 0px 10px 0px
     max-width: 60vw
-    flex-grow: 1
-    justify-content: center
-    align-items: baseline
-    background-color: #f6f6ef
 
 article.photo, article.photoset
     border-color: #3DC259
 
     figure
-        display: flex
-        justify-content: center
         flex-direction: column
 
         a img
             max-width: 100%
             max-height: 90vmin
 
-
- article.video
-      display: flex
-      justify-content: center
-      flex-direction: column
-
 article.text, article.quote, article.link, article.answer
     border-color: #E55377
+    flex-direction: row
+
+    section.content
+        max-width: 50%
 
 article.quote blockquote
     font-family:  "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif
@@ -74,6 +67,7 @@ section.content
     padding: 10px
     align-self: center
     display: flex
+    flex-direction: column
 
 section.caption
     margin: 0

@@ -23,27 +23,23 @@ article {
   border-style: solid;
   border-width: 10px;
   border-color: #FD921D;
+  background-color: #f6f6ef;
   margin: 10px 0px 10px 0px;
-  max-width: 60vw;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: baseline;
-  background-color: #f6f6ef; }
+  max-width: 60vw; }
 
 article.photo, article.photoset {
   border-color: #3DC259; }
   article.photo figure, article.photoset figure {
-    display: flex;
-    justify-content: center;
     flex-direction: column; }
-  article.photo figure a img, article.photoset figure a img {
-    max-width: 100%;
-    max-height: 90vmin; }
-  article.photo figcaption, article.photoset figcaption {
-    margin-bottom: 20px; }
+    article.photo figure a img, article.photoset figure a img {
+      max-width: 100%;
+      max-height: 90vmin; }
 
 article.text, article.quote, article.link, article.answer {
-  border-color: #E55377; }
+  border-color: #E55377;
+  flex-direction: row; }
+  article.text section.content, article.quote section.content, article.link section.content, article.answer section.content {
+    max-width: 50%; }
 
 article.quote blockquote {
   font-family: "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif;
@@ -68,7 +64,9 @@ section.content {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  align-self: center; }
+  align-self: center;
+  display: flex;
+  flex-direction: column; }
 
 section.caption {
   margin: 0;
