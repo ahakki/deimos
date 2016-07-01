@@ -12,7 +12,7 @@
   text-rendering: optimizeLegibility; }
 
 body {
-  background-color: #f7f9fa;
+  background-color: #fff;
   margin: 10px;
   display: flex;
   justify-content: center;
@@ -28,17 +28,19 @@ article {
   flex-grow: 1;
   justify-content: center;
   align-items: baseline;
-  background-color: #eee; }
+  background-color: #f6f6ef; }
 
 article.photo, article.photoset {
   border-color: #3DC259; }
+  article.photo figure, article.photoset figure {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
   article.photo figure a img, article.photoset figure a img {
     max-width: 100%;
-    max-height: 90vmin;
-    align-self: center; }
-
-article.video iframe {
-  width: 100%; }
+    max-height: 90vmin; }
+  article.photo figcaption, article.photoset figcaption {
+    margin-bottom: 20px; }
 
 article.text, article.quote, article.link, article.answer {
   border-color: #E55377; }
@@ -108,13 +110,11 @@ h1 {
           {/block:Panorama}
           {block:Photoset}
           {block:Photos}
-          <section>
-            <figure><a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a></figure>
-          </section>{block:Caption}
-          <section class="caption">
-            <p>{Caption}</p>
-          </section>
-          {/block:Caption}
+          <figure><a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a>{block:Caption}
+            <figcaption>
+              <p>{Caption}</p>
+            </figcaption>{/block:Caption}
+          </figure>
           {/block:Photos}
           {/block:Photoset}{block:Quote}
           <blockquote>
