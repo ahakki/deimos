@@ -1,2 +1,12 @@
 | {block:Photoset}
+| {block:Photos}
+section
+    figure
+        a(href="{Permalink}")
+            img(src="{PhotoURL-HighRes}" alt="{PhotoAlt}")
+| {block:Caption}
+section.caption
+    p {Caption}
+| {/block:Caption}
+| {/block:Photos}
 | {/block:Photoset}

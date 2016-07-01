@@ -9,96 +9,83 @@
       * {
   font-family: 'Segoe UI', 'San Francisco', 'Roboto', 'Fira Sans', sans-serif;
   font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
+  text-rendering: optimizeLegibility; }
+
 body {
   background-color: #f7f9fa;
   margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-}
+  flex-direction: column; }
+
 article {
   border-style: solid;
   border-width: 10px;
-  border-color: #fd921d;
+  border-color: #FD921D;
   margin: 10px 0px 10px 0px;
   max-width: 60vw;
   flex-grow: 1;
   justify-content: center;
   align-items: baseline;
-  background-color: #eee;
-}
-article.photo {
-  border-style: solid;
-  border-width: 10px;
-  border-color: #3dc259;
-}
-article.photo figure a img {
-  max-width: 100%;
-  max-height: 90vmin;
-  justify-content: center;
-  align-items: center;
-}
+  background-color: #eee; }
+
+article.photo, article.photoset {
+  border-color: #3DC259; }
+  article.photo figure a img, article.photoset figure a img {
+    max-width: 100%;
+    max-height: 90vmin;
+    align-self: center; }
+
 article.video iframe {
-  width: 100%;
-}
-article.text,
-article.quote,
-article.link,
-article.answer {
-  border-color: #e55377;
-}
+  width: 100%; }
+
+article.text, article.quote, article.link, article.answer {
+  border-color: #E55377; }
+
 article.quote blockquote {
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-family: "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif;
   font-size: 24px;
-  font-style: normal;
+  font-weight: bold;
   font-variant: normal;
-  font-weight: 500;
-  line-height: 26.4px;
-}
-article.quote p.source {
-  font-style: italic;
-}
-article.video,
-article.audio {
-  border-color: #e6dd32;
-}
+  line-height: 26.4px; }
+  article.quote blockquote p {
+    font-size: 16px;
+    font-style: italic; }
+
+article.video, article.audio {
+  border-color: #E6DD32; }
+
 article details {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-}
-article details p {
-  display: inline-block;
-  margin-right: 10px;
-}
+  justify-content: space-around; }
+  article details p {
+    display: inline-block;
+    margin-right: 10px; }
+
 section.content {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  align-self: center;
-}
+  align-self: center; }
+
 section.caption {
   margin: 0;
-  padding: 10px;
-}
-section.caption p {
-  margin: 0;
-}
+  padding: 10px; }
+  section.caption p {
+    margin: 0; }
+
 details {
-  background-color: #601dff;
+  background-color: #601DFF;
   color: #fff;
   margin: 0;
-  padding: 10px;
-}
-details a {
-  color: #fd921d;
-}
+  padding: 10px; }
+  details a {
+    color: #FD921D; }
+  details a:visited {
+    color: #3DC259; }
+
 h1 {
-  font-weight: lighter;
-}
+  font-weight: lighter; }
       {CustomCSS}
     </style>
   </head>
@@ -120,11 +107,20 @@ h1 {
           {block:Panorama}
           {/block:Panorama}
           {block:Photoset}
+          {block:Photos}
+          <section>
+            <figure><a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a></figure>
+          </section>{block:Caption}
+          <section class="caption">
+            <p>{Caption}</p>
+          </section>
+          {/block:Caption}
+          {/block:Photos}
           {/block:Photoset}{block:Quote}
-          <blockquote>« {Quote} »</blockquote>{block:Source}
-          <p class="source">-- {Source}</p>
-          {/block:Source}
-          {/block:Quote}
+          <blockquote>
+            « {Quote} »{block:Source}
+            <p class="source">— {Source}</p>{/block:Source}
+          </blockquote>{/block:Quote}
           {block:Link}
           {/block:Link}
           {block:Chat}

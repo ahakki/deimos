@@ -4,18 +4,14 @@
   "description": "a tumblr theme",
   "main": "dist/deimos.html",
   "dependencies": {
-    // "npm-watch": "^0.1.4"
   },
   "devDependencies": {
     "jstransformer-sass": "^0.1.0",
     "pug-cli": "^1.0.0-alpha6"
   },
-  // "watch": {
-  //   "test": "src/**"
-  // },
   "scripts": {
-    "build": "pug .\\src\\deimos.pug -P -o .\\dist",
-    "watch": "npm-watch"
+    "build": "pug ./src/deimos.pug -P -o ./dist",
+    "watch": ".\\watch-build.ps1"
   },
   "repository": {
     "type": "git",
