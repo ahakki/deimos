@@ -3,6 +3,7 @@
     font-weight: normal
     text-rendering: optimizeLegibility
 
+
 body
     background-color: #fff
     margin: 10px
@@ -11,82 +12,117 @@ body
     align-items: center
     flex-direction: column
 
-article
-    border-style: solid
-    border-width: 10px
-    border-color: #FD921D
-    background-color: #f6f6ef
+section.posts
+    article
+        border-style: solid
+        border-width: 10px
+        border-color: #FD921D
+        background-color: #f6f6ef
 
-    margin: 10px 0px 10px 0px
-    max-width: 60vw
+        margin: 10px 0px 10px 0px
+        max-width: 60vw
 
-article.photo, article.photoset
-    border-color: #3DC259
 
-    figure
-        flex-direction: column
+        section.content
+            justify-content: center
+            padding: 10px
+            align-self: center
+            display: flex
+            flex-direction: column
+            align-items: center
 
-        a img
+            p, h2, h3, h4, h5, h6
+                text-align: justify
+                align-self: flex-start
+
+            h1
+                align-self: center
+                font-size: 2em
+
+            iframe
+                max-width: 100%
+
+
+
+        section.caption
+            margin: 0
+            padding: 10px
+
+
+    article.photo, article.photoset
+        border-color: #3DC259
+
+        figure
+            flex-direction: column
+
+            a img
+                max-width: 100%
+                max-height: 90vmin
+
+    article.text, article.quote, article.link, article.answer
+        border-color: #E55377
+        flex-direction: row
+
+        section.content
+            align-items: flex-start
+
+        blockquote
+            font-family:  "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif
+            font-size: 24px
+            font-weight: bold
+            font-variant: normal
+            line-height: 26.4px
+            width: 400px
             max-width: 100%
-            max-height: 90vmin
+            text-align: justify
+            align-self: center
 
-article.text, article.quote, article.link, article.answer
-    border-color: #E55377
-    flex-direction: row
+            p
+                font-size: 16px
+                font-style: italic
+                align-self: flex-start
 
-    section.content
-        max-width: 50%
+    article.video, article.audio
+        border-color: #E6DD32
 
-article.quote blockquote
-    font-family:  "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif
-    font-size: 24px
-    font-weight: bold
-    font-variant: normal
-    line-height: 26.4px
+    // article.reblog
+    //     border-color: #FD921D
 
-    p
-        font-size: 16px
-        font-style: italic
+    article details
+        justify-content: space-around
 
-article.video, article.audio
-    border-color: #E6DD32
+        p
+            display: inline-block
+            margin-right: 10px
 
-// article.reblog
-//     border-color: #FD921D
 
-article details
-    justify-content: space-around
 
-    p
-        display: inline-block
-        margin-right: 10px
-
-section.content
-    justify-content: center
-    align-items: center
-    padding: 10px
-    align-self: center
-    display: flex
-    flex-direction: column
-
-section.caption
-    margin: 0
-    padding: 10px
-
-    p
+    details
+        background-color: #601DFF
+        color: #fff
         margin: 0
+        padding: 10px
 
-details
-    background-color: #601DFF
-    color: #fff
-    margin: 0
-    padding: 10px
+        a
+            color: #FD921D
 
-    a
-        color: #FD921D
-
-    a:visited
-        color: #3DC259
+        a:visited
+            color: #3DC259
 
 h1
     font-weight: lighter
+
+.tumblr_theme_marker_description
+    max-width: 100%
+
+pre
+    overflow: scroll
+    padding: 10px
+
+code
+    font-family: monospace
+
+iframe
+    max-width: 100%
+    height:
+
