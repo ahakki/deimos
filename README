@@ -1,3 +1,0 @@
-node-sass.cmd -w .\src\style.sass -o .\src\includes\style\
-
-pug .\src\deimos.pug -w -P -o .\dist\
