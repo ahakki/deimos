@@ -12,8 +12,7 @@ Function Register-Watcher {
         $name = $Event.SourceEventArgs.Name
         $changeType = $Event.SourceEventArgs.ChangeType
         $timeStamp = $Event.TimeGenerated
-		pug .\src\deimos.pug -P -o .\dist
-        Write-Host "Change Detected: Building!"
+		Write-Host (pug .\src\deimos.pug -P -o .\dist)
     ')
 
     Register-ObjectEvent $Watcher "Changed" -Action $changeAction

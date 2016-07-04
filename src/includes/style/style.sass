@@ -2,6 +2,7 @@
     font-family: 'Segoe UI', 'San Francisco', 'Roboto', 'Fira Sans', sans-serif
     font-weight: normal
     text-rendering: optimizeLegibility
+    hyphens: auto
 
 
 body
@@ -17,11 +18,12 @@ section.posts
         border-style: solid
         border-width: 10px
         border-color: #FD921D
-        background-color: #f6f6ef
+        background-color: #eeeee0
 
         margin: 10px 0px 10px 0px
-        max-width: 60vw
-
+        width: 60vw
+        max-width: 800px
+        min-width: 640px
 
         section.content
             justify-content: center
@@ -30,6 +32,7 @@ section.posts
             display: flex
             flex-direction: column
             align-items: center
+            padding: 20px
 
             p, h2, h3, h4, h5, h6
                 text-align: justify
@@ -46,8 +49,22 @@ section.posts
 
         section.caption
             margin: 0
-            padding: 10px
+            padding: 20px
 
+
+            p
+                max-width: 700px
+
+            blockquote
+                text-align: justify
+                align-self: center
+                background-color: #fff
+                padding: 10px
+                box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75)
+
+                blockquote
+                    box-shadow: 0px 0px
+                    width: initial
 
     article.photo, article.photoset
         border-color: #3DC259
@@ -58,6 +75,7 @@ section.posts
             a img
                 max-width: 100%
                 max-height: 90vmin
+                margin: 0 15px 15px 0
 
     article.text, article.quote, article.link, article.answer
         border-color: #E55377
@@ -66,21 +84,34 @@ section.posts
         section.content
             align-items: flex-start
 
-        blockquote
-            font-family:  "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif
-            font-size: 24px
-            font-weight: bold
-            font-variant: normal
-            line-height: 26.4px
-            width: 400px
-            max-width: 100%
-            text-align: justify
-            align-self: center
+            blockquote
+                font-family:  "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif
+                font-size: 24px
+                font-weight: bold
+                font-variant: normal
+                line-height: 26.4px
+                width: 400px
+                max-width: 100%
+                text-align: justify
+                align-self: center
+                background-color: #fff
+                padding: 10px
+                box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75)
 
-            p
-                font-size: 16px
-                font-style: italic
-                align-self: flex-start
+                blockquote
+                    box-shadow: 0px 0px
+                    width: initial
+
+                a
+                    text-decoration: none
+
+                a:hover
+                    text-decoration: underline
+
+                p
+                    font-size: 16px
+                    font-style: italic
+                    align-self: flex-start
 
     article.video, article.audio
         border-color: #E6DD32
@@ -108,9 +139,6 @@ section.posts
 
         a:visited
             color: #3DC259
-
-h1
-    font-weight: lighter
 
 .tumblr_theme_marker_description
     max-width: 100%

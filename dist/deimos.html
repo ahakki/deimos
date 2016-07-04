@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{Title}</title>
+    <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
     <link rel="shortcut icon" href="{Favicon}">
-    <script src="https://use.typekit.net/dvq3ffd.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <style type="text/css">
       * {
   font-family: 'Segoe UI', 'San Francisco', 'Roboto', 'Fira Sans', sans-serif;
   font-weight: normal;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  hyphens: auto; }
 
 body {
   background-color: #fff;
@@ -23,16 +22,19 @@ section.posts article {
   border-style: solid;
   border-width: 10px;
   border-color: #FD921D;
-  background-color: #f6f6ef;
+  background-color: #eeeee0;
   margin: 10px 0px 10px 0px;
-  max-width: 60vw; }
+  width: 60vw;
+  max-width: 800px;
+  min-width: 640px; }
   section.posts article section.content {
     justify-content: center;
     padding: 10px;
     align-self: center;
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    padding: 20px; }
     section.posts article section.content p, section.posts article section.content h2, section.posts article section.content h3, section.posts article section.content h4, section.posts article section.content h5, section.posts article section.content h6 {
       text-align: justify;
       align-self: flex-start; }
@@ -43,7 +45,18 @@ section.posts article {
       max-width: 100%; }
   section.posts article section.caption {
     margin: 0;
-    padding: 10px; }
+    padding: 20px; }
+    section.posts article section.caption p {
+      max-width: 700px; }
+    section.posts article section.caption blockquote {
+      text-align: justify;
+      align-self: center;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 0.75); }
+      section.posts article section.caption blockquote blockquote {
+        box-shadow: 0px 0px;
+        width: initial; }
 
 section.posts article.photo, section.posts article.photoset {
   border-color: #3DC259; }
@@ -51,27 +64,38 @@ section.posts article.photo, section.posts article.photoset {
     flex-direction: column; }
     section.posts article.photo figure a img, section.posts article.photoset figure a img {
       max-width: 100%;
-      max-height: 90vmin; }
+      max-height: 90vmin;
+      margin: 0 15px 15px 0; }
 
 section.posts article.text, section.posts article.quote, section.posts article.link, section.posts article.answer {
   border-color: #E55377;
   flex-direction: row; }
   section.posts article.text section.content, section.posts article.quote section.content, section.posts article.link section.content, section.posts article.answer section.content {
     align-items: flex-start; }
-  section.posts article.text blockquote, section.posts article.quote blockquote, section.posts article.link blockquote, section.posts article.answer blockquote {
-    font-family: "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif;
-    font-size: 24px;
-    font-weight: bold;
-    font-variant: normal;
-    line-height: 26.4px;
-    width: 400px;
-    max-width: 100%;
-    text-align: justify;
-    align-self: center; }
-    section.posts article.text blockquote p, section.posts article.quote blockquote p, section.posts article.link blockquote p, section.posts article.answer blockquote p {
-      font-size: 16px;
-      font-style: italic;
-      align-self: flex-start; }
+    section.posts article.text section.content blockquote, section.posts article.quote section.content blockquote, section.posts article.link section.content blockquote, section.posts article.answer section.content blockquote {
+      font-family: "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif;
+      font-size: 24px;
+      font-weight: bold;
+      font-variant: normal;
+      line-height: 26.4px;
+      width: 400px;
+      max-width: 100%;
+      text-align: justify;
+      align-self: center;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 0.75); }
+      section.posts article.text section.content blockquote blockquote, section.posts article.quote section.content blockquote blockquote, section.posts article.link section.content blockquote blockquote, section.posts article.answer section.content blockquote blockquote {
+        box-shadow: 0px 0px;
+        width: initial; }
+      section.posts article.text section.content blockquote a, section.posts article.quote section.content blockquote a, section.posts article.link section.content blockquote a, section.posts article.answer section.content blockquote a {
+        text-decoration: none; }
+      section.posts article.text section.content blockquote a:hover, section.posts article.quote section.content blockquote a:hover, section.posts article.link section.content blockquote a:hover, section.posts article.answer section.content blockquote a:hover {
+        text-decoration: underline; }
+      section.posts article.text section.content blockquote p, section.posts article.quote section.content blockquote p, section.posts article.link section.content blockquote p, section.posts article.answer section.content blockquote p {
+        font-size: 16px;
+        font-style: italic;
+        align-self: flex-start; }
 
 section.posts article.video, section.posts article.audio {
   border-color: #E6DD32; }
@@ -91,9 +115,6 @@ section.posts details {
     color: #FD921D; }
   section.posts details a:visited {
     color: #3DC259; }
-
-h1 {
-  font-weight: lighter; }
 
 .tumblr_theme_marker_description {
   max-width: 100%; }
@@ -120,10 +141,8 @@ iframe {
         <section class="content">
           {block:Text}
           {block:Title}<a href="{Permalink}">
-            <h3>{Title}</h3></a>
-          {/block:Title}
-          {Body}
-          {/block:Text}{block:Photo}
+            <h3>{Title}</h3></a>{/block:Title}
+          <blockquote>{Body}</blockquote>{/block:Text}{block:Photo}
           <figure><a href="{Permalink}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a></figure>{/block:Photo}{block:Panorama}
           <figure><a href="{Permalink}"><img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"></a></figure>{/block:Panorama}
           {block:Photoset}
@@ -139,7 +158,11 @@ iframe {
             « {Quote} »{block:Source}
             <p class="source">— {Source}</p>{/block:Source}
           </blockquote>{/block:Quote}{block:Link}
-          <blockquote><a href="{URL}">{Name}</a></blockquote>
+          <blockquote>{block:Host}
+            <h2>{Host}</h2>{/block:Host}<a href="{URL}">
+              <h1>{Name}&nbsp↠</h1></a>{block:Excerpt}
+            <p>{Excerpt}</p>{/block:Excerpt}
+          </blockquote>
           {block:Description}
           {Description}
           {/block:Description}
@@ -155,8 +178,8 @@ iframe {
           {block:Answer}
           {/block:Answer}
         </section>{block:Caption}
-        <section class="caption"> 
-          <p>{Caption}</p>
+        <section class="caption">
+          <blockquote>{Caption}</blockquote>
         </section>{/block:Caption}
         <details>{block:Date}
           <p class="time">{TimeAgo}</p>{/block:Date}
@@ -171,7 +194,7 @@ iframe {
       <article class="prev"><a href="{NextPage}">Next</a></article>{/block:NextPage}
     </section>{/block:Pagination}
     <footer>
-      <p>hakki</p>
+      <p class="copyright">© {CopyrightYears} Alexander Hakki</p>
     </footer>
   </body>
 </html>

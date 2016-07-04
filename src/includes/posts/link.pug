@@ -1,6 +1,13 @@
 | {block:Link}
 blockquote
-    a(href="{URL}") {Name}
+    | {block:Host}
+    h2 {Host}
+    | {/block:Host}
+    a(href="{URL}")
+        h1 {Name}&nbsp↠
+    | {block:Excerpt}
+    p {Excerpt}
+    | {/block:Excerpt}
 
 | {block:Description}
 | {Description}
