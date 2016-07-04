@@ -1,0 +1,22 @@
+{
+  "name": "deimos",
+  "version": "0.0.1",
+  "description": "a tumblr theme",
+  "main": "dist/deimos.html",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jstransformer-sass": "^0.1.0",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "scripts": {
+    "build": "pug ./src/deimos.pug -P -o ./dist",
+    "watch": ".\\watch-build.ps1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.com:ahakki/deimos"
+  },
+  "author": "Alexander Hakki",
+  "license": "BSD-3-Clause"
+}

@@ -1,0 +1,11 @@
+| {block:Photoset}
+| {block:Photos}
+figure
+    a(href="{Permalink}")
+        img(src="{PhotoURL-HighRes}" alt="{PhotoAlt}")
+    | {block:Caption}
+    figcaption
+        p {Caption}
+    | {/block:Caption}
+| {/block:Photos}
+| {/block:Photoset}

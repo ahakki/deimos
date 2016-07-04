@@ -1,0 +1,26 @@
+section.posts
+    |{block:Posts}
+    article(class="{PostType} {TagsAsClasses}")
+        section.content
+            include ./posts/text.pug
+            include ./posts/photo.pug
+            include ./posts/panorama.pug
+            include ./posts/photoset.pug
+            include ./posts/quote.pug
+            include ./posts/link.pug
+            include ./posts/chat.pug
+            include ./posts/audio.pug
+            include ./posts/video.pug
+            include ./posts/answer.pug
+        | {block:Caption}
+        section.caption
+            blockquote {Caption}
+        | {/block:Caption}
+        details
+            | {block:Date}
+            p.time {TimeAgo}
+            | {/block:Date}
+            p.permalink Permalink: &nbsp
+                a(href="{Permalink}") {ShortURL}
+
+    |{/block:Posts}

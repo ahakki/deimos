@@ -1,0 +1,192 @@
+*
+    font-family: 'Segoe UI', 'San Francisco', 'Roboto', 'Fira Sans', sans-serif
+    font-weight: normal
+    text-rendering: optimizeLegibility
+    hyphens: auto
+
+
+body
+    background-color: #fff
+    margin: 20px 0 0 0
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+header
+    width: 2vw
+    max-width: 800px
+    min-width: 640px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h1
+        width: 100%
+        font-size: 100vw
+
+    img
+        max-width: 100%
+
+
+section.posts
+    article
+        border-style: solid
+        border-width: 10px
+        border-color: #FD921D
+        background-color: #eeeee0
+        margin: 10px 0px 10px 0px
+        width: 60vw
+        max-width: 800px
+        min-width: 640px
+
+        section.content
+            justify-content: center
+            padding: 10px
+            align-self: center
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 20px
+
+            p, h2, h3, h4, h5, h6
+                text-align: justify
+                align-self: flex-start
+
+            h1
+                align-self: center
+                font-size: 2em
+
+            iframe
+                max-width: 100%
+
+
+
+        section.caption
+            margin: 0
+            padding: 20px
+
+
+            p
+                max-width: 700px
+
+            blockquote
+                text-align: justify
+                align-self: center
+                background-color: #fff
+                padding: 15px
+                box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75)
+
+                blockquote
+                    box-shadow: 0px 0px
+                    width: initial
+
+    article.photo, article.photoset
+        border-color: #E55377
+
+        figure
+            flex-direction: column
+
+            a img
+                max-width: 100%
+                max-height: 80vmin
+                margin: 0 15px 15px 0
+
+                border-radius: 4px
+                border: 0.5px solid #ddddd0
+
+    article.text, article.quote, article.link, article.answer
+        border-color: #3DC259
+        flex-direction: row
+
+        section.content
+            align-items: flex-start
+
+            blockquote
+                font-family:  "Times New Roman", Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",  serif
+                font-size: 24px
+                font-weight: bold
+                font-variant: normal
+                line-height: 26.4px
+                width: 400px
+                max-width: 100%
+                text-align: justify
+                align-self: center
+                background-color: #fff
+                padding: 10px
+                box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75)
+
+                blockquote
+                    box-shadow: 0px 0px
+                    width: initial
+
+
+                a
+                    text-decoration: none
+
+                a:hover
+                    text-decoration: underline
+
+                p
+                    font-size: 16px
+                    font-style: italic
+                    align-self: flex-start
+
+    article.video, article.audio
+        border-color: #E6DD32
+
+    // article.reblog
+    //     border-color: #FD921D
+
+    article details
+        justify-content: space-around
+
+        p
+            display: inline-block
+            margin-right: 10px
+
+
+
+    details
+        background-color: #601DFF
+        color: #fff
+        margin: 0
+        padding: 10px
+
+        a
+            color: #FD921D
+
+        a:visited
+            color: #3DC259
+
+.tumblr_theme_marker_description
+    max-width: 100%
+
+pre
+    overflow: scroll
+    padding: 10px
+
+code
+    font-family: monospace
+
+iframe
+    max-width: 100%
+    height:
+
+footer
+    background-color: #eeeee0
+    border-style: solid
+    border-width: 10px 0 0 0
+    border-color: #FD921D
+    width: 100%
+    margin-top: 30px
+
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 20px
+
+    p
+        color: gray
+        font-style: italic
+        margin: 0
