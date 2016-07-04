@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.com:ahakki/deimos"
+    "url": "git@github.com:ahakki/deimos"
   },
   "author": "Alexander Hakki",
   "license": "BSD-3-Clause"
