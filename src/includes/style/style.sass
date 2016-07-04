@@ -7,11 +7,27 @@
 
 body
     background-color: #fff
-    margin: 10px
+    margin: 20px 0 0 0
     display: flex
     justify-content: center
     align-items: center
     flex-direction: column
+
+header
+    width: 2vw
+    max-width: 800px
+    min-width: 640px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h1
+        width: 100%
+        font-size: 100vw
+
+    img
+        max-width: 100%
+
 
 section.posts
     article
@@ -19,7 +35,6 @@ section.posts
         border-width: 10px
         border-color: #FD921D
         background-color: #eeeee0
-
         margin: 10px 0px 10px 0px
         width: 60vw
         max-width: 800px
@@ -59,7 +74,7 @@ section.posts
                 text-align: justify
                 align-self: center
                 background-color: #fff
-                padding: 10px
+                padding: 15px
                 box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75)
 
                 blockquote
@@ -67,21 +82,21 @@ section.posts
                     width: initial
 
     article.photo, article.photoset
-        border-color: #3DC259
+        border-color: #E55377
 
         figure
             flex-direction: column
 
             a img
                 max-width: 100%
-                max-height: 90vmin
+                max-height: 80vmin
                 margin: 0 15px 15px 0
 
                 border-radius: 4px
                 border: 0.5px solid #ddddd0
 
     article.text, article.quote, article.link, article.answer
-        border-color: #E55377
+        border-color: #3DC259
         flex-direction: row
 
         section.content
@@ -104,6 +119,7 @@ section.posts
                 blockquote
                     box-shadow: 0px 0px
                     width: initial
+
 
                 a
                     text-decoration: none
@@ -157,3 +173,20 @@ iframe
     max-width: 100%
     height:
 
+footer
+    background-color: #eeeee0
+    border-style: solid
+    border-width: 10px 0 0 0
+    border-color: #FD921D
+    width: 100%
+    margin-top: 30px
+
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 20px
+
+    p
+        color: gray
+        font-style: italic
+        margin: 0

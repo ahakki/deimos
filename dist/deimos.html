@@ -12,11 +12,24 @@
 
 body {
   background-color: #fff;
-  margin: 10px;
+  margin: 20px 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
+
+header {
+  width: 2vw;
+  max-width: 800px;
+  min-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  header h1 {
+    width: 100%;
+    font-size: 100vw; }
+  header img {
+    max-width: 100%; }
 
 section.posts article {
   border-style: solid;
@@ -52,25 +65,25 @@ section.posts article {
       text-align: justify;
       align-self: center;
       background-color: #fff;
-      padding: 10px;
+      padding: 15px;
       box-shadow: 15px 15px 0px 0px rgba(0, 0, 0, 0.75); }
       section.posts article section.caption blockquote blockquote {
         box-shadow: 0px 0px;
         width: initial; }
 
 section.posts article.photo, section.posts article.photoset {
-  border-color: #3DC259; }
+  border-color: #E55377; }
   section.posts article.photo figure, section.posts article.photoset figure {
     flex-direction: column; }
     section.posts article.photo figure a img, section.posts article.photoset figure a img {
       max-width: 100%;
-      max-height: 90vmin;
+      max-height: 80vmin;
       margin: 0 15px 15px 0;
       border-radius: 4px;
       border: 0.5px solid #ddddd0; }
 
 section.posts article.text, section.posts article.quote, section.posts article.link, section.posts article.answer {
-  border-color: #E55377;
+  border-color: #3DC259;
   flex-direction: row; }
   section.posts article.text section.content, section.posts article.quote section.content, section.posts article.link section.content, section.posts article.answer section.content {
     align-items: flex-start; }
@@ -130,12 +143,27 @@ code {
 
 iframe {
   max-width: 100%; }
+
+footer {
+  background-color: #eeeee0;
+  border-style: solid;
+  border-width: 10px 0 0 0;
+  border-color: #FD921D;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px; }
+  footer p {
+    color: gray;
+    font-style: italic;
+    margin: 0; }
       {CustomCSS}
     </style>
   </head>
   <body>
     <header><a href="{BlogURL}"><img src="{HeaderImage}"></a>
-      <h1>{Title}</h1>
       <p>{Description}</p>
     </header>
     <section class="posts">{block:Posts}
@@ -176,9 +204,15 @@ iframe {
           {/block:Audio}
           {block:Video}
           {{VideoEmbed-700}
-          {/block:Video}
-          {block:Answer}
-          {/block:Answer}
+          {/block:Video}{block:Answer}
+          <blockquote class="question">
+            <h3>{Asker} asks:</h3>
+            <p>{Question}</p>
+          </blockquote>
+          <blockquote class="answer">
+            <h3>Answer by {Answerer}:</h3>
+            <p>{Answer}</p>
+          </blockquote>{/block:Answer}
         </section>{block:Caption}
         <section class="caption">
           <blockquote>{Caption}</blockquote>
@@ -196,6 +230,7 @@ iframe {
       <article class="prev"><a href="{NextPage}">Next</a></article>{/block:NextPage}
     </section>{/block:Pagination}
     <footer>
+      <p class="title">{Title}</p>
       <p class="copyright">© {CopyrightYears} Alexander Hakki</p>
     </footer>
   </body>
