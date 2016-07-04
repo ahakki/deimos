@@ -3,6 +3,8 @@ DEIMOS
 
 My very own Tumblr theme
 
+Just copy the contents of dist/deimos.html into tumblr ^^
+
 TODOS:
 
 - [ ]   Chat Posts
