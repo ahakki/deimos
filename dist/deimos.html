@@ -159,6 +159,10 @@ footer {
     color: gray;
     font-style: italic;
     margin: 0; }
+
+.engagement-buttons {
+  display: flex;
+  flex-direction: row; }
       {CustomCSS}
     </style>
   </head>
@@ -220,6 +224,7 @@ footer {
         <details>{block:Date}
           <p class="time">{TimeAgo}</p>{/block:Date}
           <p class="permalink">Permalink: &nbsp<a href="{Permalink}">{ShortURL}</a></p>
+          <p class="engagement-buttons">{ReblogButton}</p>
         </details>
       </article>{/block:Posts}
     </section>{block:Pagination}
